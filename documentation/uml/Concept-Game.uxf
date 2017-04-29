@@ -1,24 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.2">
-  <zoom_level>10</zoom_level>
+  <zoom_level>8</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>590</x>
-      <y>30</y>
-      <w>140</w>
-      <h>30</h>
+      <x>264</x>
+      <y>16</y>
+      <w>160</w>
+      <h>48</h>
     </coordinates>
-    <panel_attributes>Игра</panel_attributes>
+    <panel_attributes>Игра
+-
+номер (зададен от сървъра)</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>230</x>
-      <y>140</y>
-      <w>140</w>
-      <h>260</h>
+      <x>0</x>
+      <y>128</y>
+      <w>112</w>
+      <h>208</h>
     </coordinates>
     <panel_attributes>Дъска (правила)
 -
@@ -42,14 +44,14 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>430</x>
-      <y>140</y>
-      <w>140</w>
-      <h>150</h>
+      <x>160</x>
+      <y>128</y>
+      <w>112</w>
+      <h>120</h>
     </coordinates>
     <panel_attributes>Фигура
 -
-изображение
+_изображение static_
 собственик (играч)
 координати {x, y}</panel_attributes>
     <additional_attributes/>
@@ -57,10 +59,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>590</x>
-      <y>140</y>
-      <w>140</w>
-      <h>50</h>
+      <x>288</x>
+      <y>128</y>
+      <w>112</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>Отбор
 -
@@ -70,10 +72,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>360</x>
-      <y>140</y>
-      <w>90</w>
-      <h>40</h>
+      <x>104</x>
+      <y>128</y>
+      <w>72</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m2=0..*</panel_attributes>
@@ -82,10 +84,10 @@ m2=0..*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>290</x>
-      <y>50</y>
-      <w>370</w>
-      <h>110</h>
+      <x>48</x>
+      <y>56</y>
+      <w>296</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m2=1</panel_attributes>
@@ -94,10 +96,10 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>650</x>
-      <y>50</y>
-      <w>50</w>
-      <h>110</h>
+      <x>336</x>
+      <y>56</y>
+      <w>40</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m2=1..*</panel_attributes>
@@ -106,10 +108,10 @@ m2=1..*</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>590</x>
-      <y>240</y>
-      <w>140</w>
-      <h>50</h>
+      <x>288</x>
+      <y>208</y>
+      <w>112</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>Играч
 -
@@ -120,10 +122,10 @@ m2=1..*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>650</x>
-      <y>180</y>
-      <w>50</w>
-      <h>80</h>
+      <x>336</x>
+      <y>160</y>
+      <w>40</w>
+      <h>64</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m2=1..*</panel_attributes>
@@ -132,10 +134,10 @@ m2=1..*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>670</x>
-      <y>50</y>
-      <w>170</w>
-      <h>110</h>
+      <x>352</x>
+      <y>56</y>
+      <w>136</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m2=1</panel_attributes>
@@ -144,10 +146,10 @@ m2=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>750</x>
-      <y>140</y>
-      <w>140</w>
-      <h>50</h>
+      <x>416</x>
+      <y>128</y>
+      <w>112</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>Хронология
 -
@@ -157,10 +159,10 @@ m2=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>750</x>
-      <y>240</y>
-      <w>140</w>
-      <h>110</h>
+      <x>416</x>
+      <y>208</y>
+      <w>112</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>Ход
 -
@@ -174,10 +176,10 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>810</x>
-      <y>180</y>
-      <w>50</w>
-      <h>80</h>
+      <x>464</x>
+      <y>160</y>
+      <w>40</w>
+      <h>64</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m2=0..*</panel_attributes>
@@ -186,10 +188,10 @@ m2=0..*</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>750</x>
-      <y>400</y>
-      <w>140</w>
-      <h>140</h>
+      <x>416</x>
+      <y>336</y>
+      <w>112</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>Съобщения между
 играчи (чат)
@@ -204,10 +206,10 @@ m2=0..*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>810</x>
-      <y>340</y>
-      <w>50</w>
-      <h>80</h>
+      <x>464</x>
+      <y>288</y>
+      <w>40</w>
+      <h>64</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m2=0..*</panel_attributes>
@@ -216,10 +218,10 @@ m2=0..*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>560</x>
-      <y>240</y>
-      <w>50</w>
-      <h>30</h>
+      <x>264</x>
+      <y>208</y>
+      <w>40</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=-&gt;</panel_attributes>
     <additional_attributes>10.0;10.0;30.0;10.0</additional_attributes>
@@ -227,10 +229,10 @@ m2=0..*</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>430</x>
-      <y>340</y>
-      <w>140</w>
-      <h>60</h>
+      <x>160</x>
+      <y>288</y>
+      <w>112</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>Специфични
 свойства
@@ -240,10 +242,10 @@ m2=0..*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>490</x>
-      <y>280</y>
-      <w>30</w>
-      <h>80</h>
+      <x>208</x>
+      <y>240</y>
+      <w>24</w>
+      <h>64</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m2=1</panel_attributes>
@@ -252,10 +254,10 @@ m2=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>350</x>
-      <y>430</y>
-      <w>140</w>
-      <h>110</h>
+      <x>96</x>
+      <y>360</y>
+      <w>112</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>Базови
 -
@@ -269,10 +271,10 @@ defense - default</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>510</x>
-      <y>430</y>
-      <w>140</w>
-      <h>110</h>
+      <x>224</x>
+      <y>360</y>
+      <w>112</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>Текущи
 -
@@ -286,10 +288,10 @@ defense - current</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>450</x>
-      <y>390</y>
-      <w>30</w>
-      <h>60</h>
+      <x>176</x>
+      <y>328</y>
+      <w>24</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
@@ -297,12 +299,272 @@ defense - current</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>530</x>
-      <y>390</y>
-      <w>30</w>
-      <h>60</h>
+      <x>240</x>
+      <y>328</y>
+      <w>24</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>664</x>
+      <y>16</y>
+      <w>176</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>Съобщение (по мрежа)
+-
+- номер игра
+- (сървърът разпознава
+и записва автора/ адресата)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>600</x>
+      <y>104</y>
+      <w>152</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>Играч до сървър
+-
+- последователност
+от желани ходове (коорд.)
+- съобщения към чат/
+към конкретен играч/отбор</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>976</x>
+      <y>104</y>
+      <w>152</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>Сървър до играч
+-
+- дали има промени
+- състояние игра
+- състояние дъска
+- състояние чат
+
+(винаги еднакъв формат)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>680</x>
+      <y>72</y>
+      <w>32</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+е</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>808</x>
+      <y>72</y>
+      <w>232</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+е</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;30.0;270.0;30.0;270.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>808</x>
+      <y>256</y>
+      <w>152</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>Възможно е в рамките на
+своя ред ("turn") играчът
+да изпрати множество
+съобщения, само част от
+които да бъдат отразени
+като валидни ходове,
+а другите - отказани.
+(аналогично - извън реда)
+
+Сървърът  отговаря на
+всяко съобщение от играч.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>712</x>
+      <y>200</y>
+      <w>176</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;30.0;200.0;30.0;200.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>600</x>
+      <y>256</y>
+      <w>192</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>Заявка ход
+-
+- начална X координата
+- начална Y координата
+- крайна X координата
+- крайна Y координата</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>600</x>
+      <y>376</y>
+      <w>192</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>При карта (дъска) с преминавания
+през няколко съседни полета в
+рамките на ход (ред), за всяко
+поле, в което играчът стъпва, се
+регистрира ход (преместване),
+и съответно се проверява за
+валидност. Например, ако някое
+преместване е непозволено,
+отказват се последващите
+премествания в заявката.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>680</x>
+      <y>344</y>
+      <w>24</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>680</x>
+      <y>200</y>
+      <w>64</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=1
+m2=няколко</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>976</x>
+      <y>256</y>
+      <w>152</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>Състояние игра
+-
+- състояние (започнала/
+приключила и т.н.)
+- № текущ играч
+- № текущ ход
+- текущо време
+- оставащо време ход</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>976</x>
+      <y>400</y>
+      <w>152</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>Състояние чат
+-
+- списък от обекти от тип:
+{канал,час, автор, текст}
+(канал може да бъде отбор,
+общ и т.н.)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1024</x>
+      <y>200</y>
+      <w>24</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>976</x>
+      <y>504</y>
+      <w>152</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>Състояние дъска
+-
+- масив или списък на
+фигури (съответно с
+координати, собственици,
+текущи точки и т.н.)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1040</x>
+      <y>200</y>
+      <w>136</w>
+      <h>320</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>30.0;10.0;30.0;40.0;150.0;40.0;150.0;370.0;10.0;370.0;10.0;380.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1040</x>
+      <y>200</y>
+      <w>120</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0;130.0;50.0;130.0;240.0;10.0;240.0;10.0;250.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>880</x>
+      <y>200</y>
+      <w>136</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>150.0;10.0;150.0;30.0;10.0;30.0;10.0;70.0</additional_attributes>
   </element>
 </diagram>
