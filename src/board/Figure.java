@@ -1,6 +1,6 @@
 package board;
 
-import java.util.TreeMap;
+import java.util.HashMap;
 
 /**
  * <p>
@@ -34,13 +34,13 @@ public abstract class Figure {
      * <li>
      * съпоставена на името конкретна стойност ({@link FigureStat}).
      */
-    private final TreeMap<String, FigureStat> stats;
+    private final HashMap<String, FigureStat> stats;
 
     /**
      * Конструктор без параметри.
      */
     public Figure() {
-        this.stats = new TreeMap<>();
+        this.stats = new HashMap<>();
     }
 
     /**
