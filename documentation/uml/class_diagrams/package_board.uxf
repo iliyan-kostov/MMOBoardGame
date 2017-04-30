@@ -34,7 +34,7 @@ _value: FigureStat_
     <panel_attributes>&lt;&lt;abstract&gt;&gt;
 Figure
 -
-- stats : TreeMap&lt;String, FigureStat&gt;
+- stats : HashMap&lt;String, FigureStat&gt;
 -
 + addStat(String, int, int) : boolean
 + getStatDefaultValue(String) : int
@@ -53,7 +53,7 @@ Figure
       <h>50</h>
     </coordinates>
     <panel_attributes>
-TreeMap&lt;String, FigureStat&gt;</panel_attributes>
+HashMap&lt;String, FigureStat&gt;</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
