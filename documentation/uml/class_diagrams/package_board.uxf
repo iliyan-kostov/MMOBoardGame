@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>460</x>
+      <y>380</y>
+      <w>200</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>
+&lt;&lt;instance&gt;&gt;
+_value: FigureStat_
+-
+- defaultValue : int
+- currentValue : int
+-
++ getDefaultValue() : int
++ getCurrentValue() : int
++ setDefaultValue(int) : int
++ setCurrentValue(int) : int
++ resetToDefault() : int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>280</x>
+      <y>40</y>
+      <w>380</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;abstract&gt;&gt;
+Figure
+-
+- stats : TreeMap&lt;String, FigureStat&gt;
+-
++ addStat(String, int, int) : boolean
++ getStatDefaultValue(String) : int
++ getStatCurrentValue(String) : int
++ setStatDefaultValue(String, int) : int
++ setStatCurrentValue(String, int) : int
++ resetStatToDefault(String) : int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>280</x>
+      <y>270</y>
+      <w>380</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>
+TreeMap&lt;String, FigureStat&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>450</x>
+      <y>200</y>
+      <w>50</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-[stats]
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>20.0;10.0;20.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>280</x>
+      <y>380</y>
+      <w>120</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>
+&lt;&lt;instance&gt;&gt;
+_key: String_
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>390</x>
+      <y>400</y>
+      <w>90</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;70.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>320</x>
+      <y>310</y>
+      <w>60</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-[key]
+m1=1
+m2=0..*</panel_attributes>
+    <additional_attributes>20.0;10.0;20.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>540</x>
+      <y>310</y>
+      <w>60</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-[value]
+m1=1
+m2=0..*</panel_attributes>
+    <additional_attributes>20.0;10.0;20.0;70.0</additional_attributes>
+  </element>
+</diagram>
