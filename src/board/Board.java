@@ -1,6 +1,7 @@
 package board;
 
 import java.awt.Dimension;
+import java.util.TreeMap;
 
 /**
  * <p>
@@ -8,10 +9,11 @@ import java.awt.Dimension;
  * <p>
  * Дъската може да бъде абстрактно представена като ортогонална мрежа от полета,
  * върху всяко от които в даден момент може да бъде разположена най-много една
- * фигура. Полетата са разположени по две оси - в редове (по X) и колони (по Y).
- * Размерите на дъската са от типа {@link Dimension}, определящ броя редове
- * (height) и броя колони (width). Горното ляво поле е с координати (x=1, y=1),
- * като координатите нарастват в посока отляво надясно и отгоре надолу.
+ * фигура. Полетата са разположени по две оси - в редове (по X - ширина) и
+ * колони (по Y - височина). Размерите на дъската са от типа {@link Dimension},
+ * определящ броя редове (височина, Y, height) и броя колони (ширина, X, width).
+ * Горното ляво поле е с координати (x=1, y=1), като координатите нарастват в
+ * посока отляво надясно и отгоре надолу.
  * <p>
  * Възможно и препоръчително е при описание на логиката на играта чрез
  * класове-наследници да бъде реализирана концепцията за свързани и ограничени
@@ -27,23 +29,27 @@ public abstract class Board {
     private final Dimension dimension;
 
     /**
-     * масив с фигурите върху полетата от дъската. Масивът е индексиран по
-     * колони и редове: Figure[x][y] е фигурата с координати (x,y).
+     * описание на наличните върху дъската фигури - на координатите на поле
+     * ({@link BoardCoordinates}) съпоставя наличната върху полето фигура.
+     * Полетата са подредени според подредбата на класа-ключ:
+     * {@link BoardCoordinates}
      */
-    private final Figure[][] figures;
+    private final TreeMap<BoardCoordinates, Figure> figures;
 
     /**
      * Конструктор. Създава празна дъска със зададените размери.
      *
      * @param dimension размерите на дъската
+     *
+     * @throws IllegalArgumentException ако накой от зададените размери на
+     * дъската не е положителен
      */
-    public Board(Dimension dimension) {
-        this.dimension = new Dimension(dimension.width, dimension.height);
-        this.figures = new Figure[this.dimension.width + 1][this.dimension.width + 1];
-        for (int i = this.dimension.width; i > - 1; i--) {
-            for (int j = this.dimension.height; j > -1; j--) {
-                this.figures[i][j] = null;
-            }
+    public Board(Dimension dimension) throws IllegalArgumentException {
+        if ((dimension.width < 1) || (dimension.height < 1)) {
+            this.dimension = new Dimension(dimension.width, dimension.height);
+            this.figures = new TreeMap<>();
+        } else {
+            throw new IllegalArgumentException("Накой от зададените размери на дъската не е положителен!");
         }
     }
 
@@ -52,7 +58,7 @@ public abstract class Board {
      *
      * @return размерите на дъската
      */
-    public final Dimension getDimension() {
+    public Dimension getDimension() {
         return new Dimension(this.dimension.width, this.dimension.height);
     }
 
@@ -66,9 +72,16 @@ public abstract class Board {
      *
      * @return фигурата, разположена върху полето със зададените X и Y
      * координати, ако има такава; в противен случай връща null
+     *
+     * @throws IllegalArgumentException ако зададените координати са извън
+     * обхвата на дъската
      */
-    public final Figure getFigure(int x, int y) {
-        return this.figures[x][y];
+    public Figure getFigure(int x, int y) throws IllegalArgumentException {
+        if ((1 <= x) && (x <= this.dimension.width) && (1 <= y) && (y <= this.dimension.height)) {
+            return this.figures.get(new BoardCoordinates(x, y));
+        } else {
+            throw new IllegalArgumentException("Зададените координати са извън обхвата на дъската!");
+        }
     }
 
     /**
@@ -85,11 +98,19 @@ public abstract class Board {
      *
      * @return предишно поставената върху полето фигура, ако има такава; в
      * противен случай връща null
+     *
+     * @throws IllegalArgumentException ако зададените координати са извън
+     * обхвата на дъската
      */
-    public final Figure setFigure(int x, int y, Figure figure) {
-        Figure previous = this.getFigure(x, y);
-        this.figures[x][y] = figure;
-        return previous;
+    public Figure setFigure(int x, int y, Figure figure) throws IllegalArgumentException {
+        if ((1 <= x) && (x <= this.dimension.width) && (1 <= y) && (y <= this.dimension.height)) {
+            Figure previous = this.getFigure(x, y);
+            this.figures.remove(new BoardCoordinates(x, y));
+            this.figures.put(new BoardCoordinates(x, y), figure);
+            return previous;
+        } else {
+            throw new IllegalArgumentException("Зададените координати са извън обхвата на дъската!");
+        }
     }
 
     /**
@@ -109,6 +130,9 @@ public abstract class Board {
      *
      * @return предишно поставената върху крайното поле фигура, ако има такава;
      * в противен случай връща null
+     *
+     * @throws IllegalArgumentException ако зададените координати са извън
+     * обхвата на дъската
      */
     public abstract Figure moveFigure(int x1, int y1, int x2, int y2);
 }
