@@ -4,10 +4,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>243</x>
-      <y>18</y>
-      <w>288</w>
-      <h>153</h>
+      <x>171</x>
+      <y>9</y>
+      <w>432</w>
+      <h>171</h>
     </coordinates>
     <panel_attributes>&lt;&lt;abstract&gt;&gt;
 Board
@@ -17,16 +17,17 @@ Board
 -
 + Board(Dimension) : &lt;&lt;constructor&gt;&gt;
 + getDimension() : Dimension
-+ getFigure(int, int) : Figure
-+ setFigure(int, int, Figure) : Figure
-+ &lt;&lt;abstract&gt;&gt; moveFigure(int, int, int, int) : Figure</panel_attributes>
++ getFigure(BoardCoordinates) : Figure
++ removeFigure(BoardCoordinates) : void
++ setFigure(BoardCoordinates, Figure) : void
++ &lt;&lt;abstract&gt;&gt; moveFigures(BoardCoordinates[ ], BoardCoordinates[ ]) : void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>414</x>
-      <y>225</y>
+      <y>234</y>
       <w>252</w>
       <h>171</h>
     </coordinates>
@@ -48,7 +49,7 @@ Figure
     <id>UMLClass</id>
     <coordinates>
       <x>108</x>
-      <y>225</y>
+      <y>234</y>
       <w>252</w>
       <h>171</h>
     </coordinates>
@@ -68,7 +69,7 @@ BoardCoordinates
     <id>UMLClass</id>
     <coordinates>
       <x>414</x>
-      <y>450</y>
+      <y>459</y>
       <w>252</w>
       <h>171</h>
     </coordinates>
@@ -90,7 +91,7 @@ FigureStat
     <id>Relation</id>
     <coordinates>
       <x>432</x>
-      <y>162</y>
+      <y>171</y>
       <w>81</w>
       <h>81</h>
     </coordinates>
@@ -103,7 +104,7 @@ m2=0..*</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>432</x>
-      <y>387</y>
+      <y>396</y>
       <w>81</w>
       <h>81</h>
     </coordinates>
@@ -116,7 +117,7 @@ m2=0..*</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>270</x>
-      <y>162</y>
+      <y>171</y>
       <w>81</w>
       <h>81</h>
     </coordinates>
@@ -129,7 +130,7 @@ m2=0..*</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>351</x>
-      <y>234</y>
+      <y>243</y>
       <w>81</w>
       <h>36</h>
     </coordinates>
@@ -142,7 +143,7 @@ m2=1</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>108</x>
-      <y>450</y>
+      <y>459</y>
       <w>252</w>
       <h>45</h>
     </coordinates>
@@ -153,21 +154,21 @@ java.lang.String</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>288</x>
-      <y>387</y>
-      <w>162</w>
+      <x>279</x>
+      <y>396</y>
+      <w>171</w>
       <h>81</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-[stats key]
 m1=1
 m2=0..*</panel_attributes>
-    <additional_attributes>160.0;10.0;160.0;40.0;30.0;40.0;30.0;70.0</additional_attributes>
+    <additional_attributes>170.0;10.0;170.0;40.0;30.0;40.0;30.0;70.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>351</x>
-      <y>459</y>
+      <y>468</y>
       <w>81</w>
       <h>36</h>
     </coordinates>

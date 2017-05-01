@@ -5,7 +5,7 @@ import java.util.Set;
 
 /**
  * <p>
- * Абстрактен клас за фигурите в играта.
+ * Базов клас за фигурите в играта.
  * <p>
  * Всяка фигура има набор от свойста от класа {@link FigureStat}. Различните
  * свойства се разпознава по имената си. На ниво фигура достъпът до определено
@@ -24,7 +24,7 @@ import java.util.Set;
  *
  * @author iliyan-kostov <https://github.com/iliyan-kostov/>
  */
-public abstract class Figure {
+public class Figure {
 
     /**
      * Набор от свойствата, присъщи на фигурата - двойки от:
