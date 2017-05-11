@@ -41,7 +41,7 @@ public abstract class Board {
      *
      * @param dimension размерите на дъската
      *
-     * @throws IllegalArgumentException ако накой от зададените размери на
+     * @throws IllegalArgumentException ако някой от зададените размери на
      * дъската не е положителен
      */
     public Board(Dimension dimension) throws IllegalArgumentException {
@@ -49,7 +49,7 @@ public abstract class Board {
             this.dimension = new Dimension(dimension.width, dimension.height);
             this.figures = new TreeMap<>();
         } else {
-            throw new IllegalArgumentException("Накой от зададените размери на дъската не е положителен!");
+            throw new IllegalArgumentException("Някой от зададените размери на дъската не е положителен!");
         }
     }
 
@@ -63,76 +63,86 @@ public abstract class Board {
     }
 
     /**
-     * Връща като резултат фигурата, разположена върху полето със зададените X и
-     * Y координати, ако има такава; в противен случай връща null.
+     * Връща като резултат фигурата, разположена върху полето със зададените
+     * координати, ако има такава; в противен случай връща null.
      *
-     * @param x X-координатата на полето
+     * @param boardCoordinates координатите на полето
      *
-     * @param y Y-координатата на полето
-     *
-     * @return фигурата, разположена върху полето със зададените X и Y
-     * координати, ако има такава; в противен случай връща null
+     * @return фигурата, разположена върху полето със зададените координати, ако
+     * има такава; в противен случай връща null
      *
      * @throws IllegalArgumentException ако зададените координати са извън
      * обхвата на дъската
      */
-    public Figure getFigure(int x, int y) throws IllegalArgumentException {
+    public Figure getFigure(BoardCoordinates boardCoordinates) throws IllegalArgumentException {
+        int x = boardCoordinates.getX();
+        int y = boardCoordinates.getY();
         if ((1 <= x) && (x <= this.dimension.width) && (1 <= y) && (y <= this.dimension.height)) {
-            return this.figures.get(new BoardCoordinates(x, y));
+            return this.figures.get(boardCoordinates);
         } else {
             throw new IllegalArgumentException("Зададените координати са извън обхвата на дъската!");
         }
     }
 
     /**
-     * Поставя зададената фигура върху полето със зададените X и Y координати,
-     * като заменя предишно поставената върху полето фигура, ако има такава.
-     * Връща като резултат предишно поставената върху полето фигура, ако има
-     * такава; в противен случай връща null.
+     * Премахва зададената фигура върху полето със зададените координати, ако
+     * има такава.
      *
-     * @param x X-координатата на полето
+     * @param boardCoordinates координатите на полето
      *
-     * @param y Y-координатата на полето
+     * @throws IllegalArgumentException ако зададените координати са извън
+     * обхвата на дъската
+     */
+    public void removeFigure(BoardCoordinates boardCoordinates) throws IllegalArgumentException {
+        int x = boardCoordinates.getX();
+        int y = boardCoordinates.getY();
+        if ((1 <= x) && (x <= this.dimension.width) && (1 <= y) && (y <= this.dimension.height)) {
+            this.figures.remove(boardCoordinates);
+        } else {
+            throw new IllegalArgumentException("Зададените координати са извън обхвата на дъската!");
+        }
+    }
+
+    /**
+     * Поставя зададената фигура върху полето със зададените координати, като
+     * заменя предишно поставената върху полето фигура, ако има такава.
+     *
+     * @param boardCoordinates координатите на полето
      *
      * @param figure фигурата, която да бъде поставена
      *
-     * @return предишно поставената върху полето фигура, ако има такава; в
-     * противен случай връща null
-     *
      * @throws IllegalArgumentException ако зададените координати са извън
      * обхвата на дъската
+     *
+     * @throws NullPointerException ако за фигура е зададена стойност null
      */
-    public Figure setFigure(int x, int y, Figure figure) throws IllegalArgumentException {
-        if ((1 <= x) && (x <= this.dimension.width) && (1 <= y) && (y <= this.dimension.height)) {
-            Figure previous = this.getFigure(x, y);
-            this.figures.remove(new BoardCoordinates(x, y));
-            this.figures.put(new BoardCoordinates(x, y), figure);
-            return previous;
+    public void setFigure(BoardCoordinates boardCoordinates, Figure figure) throws IllegalArgumentException, NullPointerException {
+        if (figure == null) {
+            throw new NullPointerException("За фигура е зададена стойност null!");
         } else {
-            throw new IllegalArgumentException("Зададените координати са извън обхвата на дъската!");
+            int x = boardCoordinates.getX();
+            int y = boardCoordinates.getY();
+            if ((1 <= x) && (x <= this.dimension.width) && (1 <= y) && (y <= this.dimension.height)) {
+                this.figures.remove(boardCoordinates);
+                this.figures.put(boardCoordinates, figure);
+            } else {
+                throw new IllegalArgumentException("Зададените координати са извън обхвата на дъската!");
+            }
         }
     }
 
     /**
-     * Премества фигура от едно поле в друго по зададени координати на началното
-     * и крайното поле. Връща като резултат предишно поставената върху крайното
-     * поле фигура, ако има такава; в противен случай връща null. Конкретната
-     * имплементация на метода се предоставя за класовете-наследници, в
-     * съответствие с конкретните правила и логика на играта.
+     * Последователно премества множество фигури според зададени масиви от
+     * координати на началните и на крайните полета. Конкретната имплементация
+     * на метода се предоставя за класовете-наследници, в съответствие с
+     * конкретните правила и логика на играта.
      *
-     * @param x1 X-координатата на началното поле
+     * @param from масив с началните координати
      *
-     * @param y1 Y-координатата на началното поле
-     *
-     * @param x2 X-координатата на крайното поле
-     *
-     * @param y2 Y-координатата на крайното поле
-     *
-     * @return предишно поставената върху крайното поле фигура, ако има такава;
-     * в противен случай връща null
+     * @param to масив с крайните координати
      *
      * @throws IllegalArgumentException ако зададените координати са извън
      * обхвата на дъската
      */
-    public abstract Figure moveFigure(int x1, int y1, int x2, int y2);
+    public abstract void moveFigures(BoardCoordinates[] from, BoardCoordinates[] to);
 }

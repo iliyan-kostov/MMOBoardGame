@@ -1,0 +1,667 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>6</zoom_level>
+  <element>
+    <id>UMLSpecialState</id>
+    <coordinates>
+      <x>102</x>
+      <y>204</y>
+      <w>12</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>type=initial</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>294</x>
+      <y>192</y>
+      <w>96</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>P.C.Support
+изпраща сигнал
+fire Event(...)
+type=sender
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>408</x>
+      <y>126</y>
+      <w>96</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>P.C.Listener
+получава сигнал
+propertyChange(...)
+type=receiver
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>252</x>
+      <y>204</y>
+      <w>54</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;70.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>150</x>
+      <y>192</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>някаква интеракция
+(натиснат е бутон)
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>108</x>
+      <y>204</y>
+      <w>54</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>70.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLObject</id>
+    <coordinates>
+      <x>552</x>
+      <y>126</y>
+      <w>84</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lw=5
+&lt;&lt;обект&gt;&gt;
+графичен
+интерфейс</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>498</x>
+      <y>138</y>
+      <w>66</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>408</x>
+      <y>258</y>
+      <w>96</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>P.C.Listener
+получава сигнал
+propertyChange(...)
+type=receiver
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>498</x>
+      <y>264</y>
+      <w>66</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+изходящо
+OUT</panel_attributes>
+    <additional_attributes>10.0;20.0;90.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLObject</id>
+    <coordinates>
+      <x>552</x>
+      <y>258</y>
+      <w>84</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lw=5
+&lt;&lt;обект&gt;&gt;
+мрежова
+връзка</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>408</x>
+      <y>192</y>
+      <w>96</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>P.C.Listener
+получава сигнал
+propertyChange(...)
+type=receiver
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>498</x>
+      <y>204</y>
+      <w>66</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLObject</id>
+    <coordinates>
+      <x>552</x>
+      <y>192</y>
+      <w>84</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;обект&gt;&gt;
+някакъв
+(неизвестен)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>618</x>
+      <y>114</y>
+      <w>78</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+сам се
+обновява
+според
+сигнала</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;100.0;50.0;100.0;50.0;10.0;10.0;10.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>558</x>
+      <y>288</y>
+      <w>60</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+OUT
+препраща
+събитието
+(като обект)
+по мрежата
+до другата
+страна</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;260.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>618</x>
+      <y>180</y>
+      <w>78</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+извършва
+действия
+(реагира)</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;100.0;50.0;100.0;50.0;10.0;10.0;10.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLObject</id>
+    <coordinates>
+      <x>84</x>
+      <y>84</y>
+      <w>798</w>
+      <h>234</h>
+    </coordinates>
+    <panel_attributes>КЛИЕНТ
+-
+valign=top</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLObject</id>
+    <coordinates>
+      <x>552</x>
+      <y>444</y>
+      <w>84</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lw=5
+&lt;&lt;обект&gt;&gt;
+мрежова
+връзка</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLObject</id>
+    <coordinates>
+      <x>102</x>
+      <y>408</y>
+      <w>780</w>
+      <h>306</h>
+    </coordinates>
+    <panel_attributes>СЪРВЪР
+-
+valign=top</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>294</x>
+      <y>510</y>
+      <w>96</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>P.C.Listener
+получава сигнал
+propertyChange(...)
+type=receiver
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLObject</id>
+    <coordinates>
+      <x>408</x>
+      <y>510</y>
+      <w>84</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lw=5
+&lt;&lt;обект&gt;&gt;
+логика
+на играта</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLObject</id>
+    <coordinates>
+      <x>408</x>
+      <y>558</y>
+      <w>84</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lw=5
+&lt;&lt;обект&gt;&gt;
+контролер
+на СУБД</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>294</x>
+      <y>558</y>
+      <w>96</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>P.C.Listener
+получава сигнал
+propertyChange(...)
+type=receiver
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>384</x>
+      <y>522</y>
+      <w>36</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;40.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>384</x>
+      <y>570</y>
+      <w>36</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;40.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>486</x>
+      <y>516</y>
+      <w>126</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+(евентуално) реагира
+по някакъв начин</panel_attributes>
+    <additional_attributes>10.0;20.0;190.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>600</x>
+      <y>510</y>
+      <w>96</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>P.C.Support
+изпраща сигнал
+fire Event(...)
+type=sender
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>486</x>
+      <y>564</y>
+      <w>126</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+(евентуално) реагира
+по някакъв начин</panel_attributes>
+    <additional_attributes>10.0;20.0;190.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>600</x>
+      <y>558</y>
+      <w>96</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>P.C.Support
+изпраща сигнал
+fire Event(...)
+type=sender
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLObject</id>
+    <coordinates>
+      <x>408</x>
+      <y>606</y>
+      <w>84</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lw=5
+&lt;&lt;обект&gt;&gt;
+мениджър
+на връзките</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>294</x>
+      <y>606</y>
+      <w>96</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>P.C.Listener
+получава сигнал
+propertyChange(...)
+type=receiver
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>384</x>
+      <y>618</y>
+      <w>36</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;40.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>486</x>
+      <y>612</y>
+      <w>126</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+(евентуално) реагира
+по някакъв начин</panel_attributes>
+    <additional_attributes>10.0;20.0;190.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>600</x>
+      <y>606</y>
+      <w>96</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>P.C.Support
+изпраща сигнал
+fire Event(...)
+type=sender
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>762</x>
+      <y>582</y>
+      <w>96</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>P.C.Listener
+получава сигнал
+propertyChange(...)
+type=receiver
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>618</x>
+      <y>288</y>
+      <w>60</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+IN
+препраща
+събитието
+(като обект)
+по мрежата
+до другата
+страна</panel_attributes>
+    <additional_attributes>10.0;260.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>684</x>
+      <y>258</y>
+      <w>96</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>P.C.Support
+изпраща сигнал
+fire Event(...)
+type=sender
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>132</x>
+      <y>582</y>
+      <w>96</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>P.C.Support
+изпраща сигнал
+fire Event(...)
+type=sender
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>630</x>
+      <y>456</y>
+      <w>228</w>
+      <h>138</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+изходящо
+OUT</panel_attributes>
+    <additional_attributes>300.0;210.0;300.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLObject</id>
+    <coordinates>
+      <x>408</x>
+      <y>654</y>
+      <w>84</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lw=5
+&lt;&lt;обект&gt;&gt;
+часовник (-ци)
+на сървъра</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLTimer</id>
+    <coordinates>
+      <x>522</x>
+      <y>660</y>
+      <w>48</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>time signal</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>486</x>
+      <y>666</y>
+      <w>54</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>70.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>600</x>
+      <y>654</y>
+      <w>96</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>P.C.Support
+изпраща сигнал
+fire Event(...)
+type=sender
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>558</x>
+      <y>666</y>
+      <w>54</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>70.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLSpecialState</id>
+    <coordinates>
+      <x>846</x>
+      <y>270</y>
+      <w>12</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>type=final</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>774</x>
+      <y>264</y>
+      <w>84</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+съобщението
+се улавя
+и обработва
+от слушателите</panel_attributes>
+    <additional_attributes>120.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>162</x>
+      <y>450</y>
+      <w>402</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+входящо
+IN</panel_attributes>
+    <additional_attributes>650.0;20.0;10.0;20.0;10.0;220.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>630</x>
+      <y>264</y>
+      <w>66</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+входящо
+IN</panel_attributes>
+    <additional_attributes>10.0;20.0;90.0;20.0</additional_attributes>
+  </element>
+</diagram>
