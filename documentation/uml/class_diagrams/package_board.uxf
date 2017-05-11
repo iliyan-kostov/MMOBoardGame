@@ -177,4 +177,18 @@ m1=1
 m2=1</panel_attributes>
     <additional_attributes>10.0;10.0;70.0;10.0</additional_attributes>
   </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>684</x>
+      <y>9</y>
+      <w>270</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;Paintable
+-
+-
++ paintComponent(java.awt.Graphics) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
 </diagram>
