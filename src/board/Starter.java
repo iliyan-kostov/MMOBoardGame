@@ -1,9 +1,14 @@
 package board;
 
+import javafx.animation.RotateTransition;
 import javafx.application.Application;
+import javafx.scene.Group;
+import javafx.scene.PerspectiveCamera;
 import javafx.scene.Scene;
 import javafx.scene.paint.Color;
+import javafx.scene.transform.Rotate;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 /**
  *
@@ -23,25 +28,40 @@ public class Starter extends Application {
         double borderWidth = 1;
         Color borderColor = Color.RED;
         Color fillColor = Color.YELLOW;
-        double sceneWidth = 900;
-        double sceneHeight = 600;
 
         // надолу - инициализация на сцената:
         {
             Board board = new Board(shape, segments, cellSize, borderWidth, borderColor, fillColor);
-
-            //Creating a scene object 
-            Scene scene = new Scene(board, sceneWidth, sceneHeight);
-
-            //Adding scene to the stage 
-            stage.setScene(scene);
-
-            //Displaying the contents of the stage 
-            stage.show();
-
-            board.setTranslateX(sceneWidth / 2);
-            board.setTranslateY(sceneHeight / 2);
+            PerspectiveCamera camera = new PerspectiveCamera(false);
+            Group sceneGroup = new Group(board, camera);
+            double sceneXsize = 600;
+            double sceneYsize = 400;
+            Scene scene = new Scene(sceneGroup, sceneXsize, sceneYsize);
+            board.setTranslateX(0);
+            board.setTranslateY(0);
             board.setTranslateZ(0);
+            board.setTranslateX(0);
+            board.setTranslateY(0);
+            board.setTranslateZ(0);
+            camera.setTranslateX(-sceneXsize / 2);
+            camera.setTranslateY(-sceneYsize / 2);
+            camera.setTranslateZ(-100);
+            camera.setRotationAxis(Rotate.X_AXIS);
+            camera.setRotate(60);
+            board.setRotate(30);
+
+            RotateTransition rotateTransition = new RotateTransition();
+            rotateTransition.setDuration(Duration.millis(5000));
+            rotateTransition.setNode(board);
+            rotateTransition.setAxis(Rotate.Z_AXIS);
+            rotateTransition.setByAngle(360);
+            rotateTransition.setCycleCount(RotateTransition.INDEFINITE);
+            rotateTransition.setAutoReverse(false);
+            rotateTransition.play();
+
+            scene.setCamera(camera);
+            stage.setScene(scene);
+            stage.show();
         }
     }
 
