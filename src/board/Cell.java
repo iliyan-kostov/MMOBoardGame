@@ -7,9 +7,10 @@ import javafx.scene.shape.StrokeType;
  * <p>
  * Клас за полетата от дъската, основан на {@link javafx.scene.shape.Polygon}.
  * <p>
- * Според разположението си спрямо дъската и избрания начин на изчертаване
- * полето има:
+ * Всяко поле е част от дъска. Според разположението си спрямо дъската и
+ * избрания начин на изчертаване полето има:
  * <ul>
+ * <li>дъска, от която полето е част
  * <li>индекси на реда и колоната
  * <li>числени координати (X, Y) на центъра
  * <li>дебелина на линията на контура
@@ -20,8 +21,8 @@ import javafx.scene.shape.StrokeType;
  * {@link Cell#BORDERSTROKETYPE}.
  * <p>
  * Цветовете на полето и на контура могат да бъдат променяни, както и дебелината
- * на линията на контура, докато останалите член-данни (индексите на реда и на
- * колоната и координатите) са окончателни.
+ * на линията на контура, докато останалите член-данни (дъската, индексите на
+ * реда и на колоната, координатите) са окончателни.
  *
  * @author iliyan-kostov <https://github.com/iliyan-kostov/>
  */
@@ -31,6 +32,11 @@ public class Cell extends javafx.scene.shape.Polygon {
      * начин за изчертаване на контура на полето
      */
     private final static StrokeType BORDERSTROKETYPE = StrokeType.INSIDE;
+
+    /**
+     * дъска, от която полето е част
+     */
+    private final Board board;
 
     /**
      * индекс на реда на полето (по Y)
@@ -68,11 +74,13 @@ public class Cell extends javafx.scene.shape.Polygon {
     private Color fillColor;
 
     /**
-     * Конструктор. Създава поле със зададените координати (индекси на ред и
-     * колона, както и (X, Y) координати на центъра), дебелина на линията на
-     * контура, цвят на контура и на вътрешността на полето. Формата на полето
-     * се описва чрез последния параметър - списък от числени координати на
-     * върховете.
+     * Конструктор. Създава поле от зададена дъска със зададените координати
+     * (индекси на ред и колона, както и (X, Y) координати на центъра), дебелина
+     * на линията на контура, цвят на контура и на вътрешността на полето.
+     * Формата на полето се описва чрез последния параметър - списък от числени
+     * координати на върховете.
+     *
+     * @param board дъска, от която полето е част
      *
      * @param row индекс на реда на полето (по Y)
      *
@@ -92,8 +100,9 @@ public class Cell extends javafx.scene.shape.Polygon {
      *
      * @see javafx.scene.shape.Polygon#Polygon(double...)
      */
-    public Cell(int row, int col, double xcenter, double ycenter, double borderWidth, Color borderColor, Color fillColor, double... points) {
+    public Cell(Board board, int row, int col, double xcenter, double ycenter, double borderWidth, Color borderColor, Color fillColor, double... points) {
         super(points);
+        this.board = board;
         this.row = row;
         this.col = col;
         this.xcenter = xcenter;
@@ -128,13 +137,22 @@ public class Cell extends javafx.scene.shape.Polygon {
     }
 
     /**
-     * Задава цвят вътрешността.
+     * Задава цвят на вътрешността.
      *
-     * @param fillColor цвят вътрешността
+     * @param fillColor цвят на вътрешността
      */
     public void setFillColor(Color fillColor) {
         this.setFill(fillColor);
         this.fillColor = fillColor;
+    }
+
+    /**
+     * Връща дъската, от която полето е част.
+     *
+     * @return дъската, от която полето е част
+     */
+    public final Board getBoard() {
+        return this.board;
     }
 
     /**
