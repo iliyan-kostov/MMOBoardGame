@@ -282,7 +282,7 @@ public final class Board extends javafx.scene.Group {
      *
      * @return формата на дъската (и полетата)
      */
-    public final Board.SHAPE getType() {
+    public final Board.SHAPE getShape() {
         return this.shape;
     }
 

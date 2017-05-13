@@ -25,4 +25,13 @@ public abstract class Figure extends javafx.scene.Group {
         super();
         this.board = board;
     }
+
+    /**
+     * Връща дъската, от която фигурата е част.
+     *
+     * @return дъската, от която фигурата е част
+     */
+    public final Board getBoard() {
+        return this.board;
+    }
 }
