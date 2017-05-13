@@ -118,15 +118,21 @@ _&lt;&lt;static&gt;&gt;&lt;&lt;final&gt;&gt; -BORDERSTROKETYPE: StrokeType_
       <x>704</x>
       <y>184</y>
       <w>272</w>
-      <h>104</h>
+      <h>176</h>
     </coordinates>
     <panel_attributes>&lt;&lt;abstract&gt;&gt;
 Figure
 --
 &lt;&lt;final&gt;&gt; -board: Board
+-row: int
+-col: int
 --
-&lt;&lt;constructor&gt;&gt; +Figure(Board)
-&lt;&lt;final&gt;&gt; +getBoard(): Board</panel_attributes>
+&lt;&lt;constructor&gt;&gt; +Figure(Board, int, int)
+&lt;&lt;final&gt;&gt; +getBoard(): Board
+&lt;&lt;final&gt;&gt; +getRow(): int
+&lt;&lt;final&gt;&gt; +getCol(): int
++setRow(int): void
++setCol(int): void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -144,11 +150,11 @@ Figure
     <id>UMLClass</id>
     <coordinates>
       <x>704</x>
-      <y>320</y>
+      <y>392</y>
       <w>272</w>
       <h>200</h>
     </coordinates>
-    <panel_attributes>
+    <panel_attributes>&lt;&lt;final&gt;&gt;
 Pawn
 --
 _&lt;&lt;static&gt;&gt;&lt;&lt;final&gt;&gt; -DEFAULT_BASERADIUS: double_
@@ -162,14 +168,14 @@ _&lt;&lt;static&gt;&gt;&lt;&lt;final&gt;&gt; -DEFAULT_TOPDIVISIONS: int_
 &lt;&lt;final&gt;&gt; -middle: Sphere
 &lt;&lt;final&gt;&gt; -top: Sphere
 --
-&lt;&lt;constructor&gt;&gt; +Pawn(Board)</panel_attributes>
+&lt;&lt;constructor&gt;&gt; +Pawn(Board, int, int)</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>800</x>
-      <y>280</y>
+      <x>832</x>
+      <y>352</y>
       <w>24</w>
       <h>56</h>
     </coordinates>
@@ -193,7 +199,7 @@ m2=0..*</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>616</x>
-      <y>264</y>
+      <y>336</y>
       <w>112</w>
       <h>32</h>
     </coordinates>
@@ -219,7 +225,7 @@ m2=0..*</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>320</x>
-      <y>264</y>
+      <y>312</y>
       <w>112</w>
       <h>32</h>
     </coordinates>

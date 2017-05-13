@@ -31,9 +31,15 @@ public final class Pawn extends board.Figure {
      * Създава фигура (подобна на пешките от шаха), част от определена дъска..
      *
      * @param board дъска, от която фигурата е част
+     *
+     * @param row индекс на реда на полето (по Y), върху което е разположена
+     * фигурата
+     *
+     * @param col индекс на колоната на полето (по X), върху което е разположена
+     * фигурата
      */
-    public Pawn(Board board) {
-        super(board);
+    public Pawn(Board board, int row, int col) {
+        super(board, row, col);
         this.base = new Cylinder(Pawn.DEFAULT_BASERADIUS, Pawn.DEFAULT_BASEHEIGHT, Pawn.DEFAULT_BASEDIVISIONS);
         this.middle = new Sphere(Pawn.DEFAULT_MIDDLERADIUS, Pawn.DEFAULT_MIDDLEDIVISIONS);
         this.top = new Sphere(Pawn.DEFAULT_TOPRADIUS, Pawn.DEFAULT_TOPDIVISIONS);
