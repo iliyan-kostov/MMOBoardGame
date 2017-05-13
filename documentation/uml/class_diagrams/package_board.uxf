@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>504</x>
+      <y>128</y>
+      <w>352</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>javafx.scene.Group</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>416</x>
+      <y>184</y>
+      <w>208</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;final&gt;&gt;
+Board
+--
+_&lt;&lt;static&gt;&gt; +SHAPE: enum_
+-shape: SHAPE
+-segments: int
+-cellSize: double
+-cells: Cell[ ][ ]
+-figures: Figure[ ][ ]
+--
+&lt;&lt;constructor&gt;&gt; +Board(SHAPE, int,
+                                    double, double,
+                                    Color, Color)
+&lt;&lt;final&gt;&gt; +getShape(): SHAPE
+&lt;&lt;final&gt;&gt; +getSegments(): int
+&lt;&lt;final&gt;&gt; +getCellSize(): double
+&lt;&lt;final&gt;&gt; +getCell(int, int): Cell
+&lt;&lt;final&gt;&gt; +getFigure(int, int): Figure
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>512</x>
+      <y>144</y>
+      <w>24</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>64</x>
+      <y>128</y>
+      <w>272</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>javafx.scene.shape.Polygon</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>64</x>
+      <y>184</y>
+      <w>272</w>
+      <h>352</h>
+    </coordinates>
+    <panel_attributes>
+Cell
+--
+_&lt;&lt;static&gt;&gt;&lt;&lt;final&gt;&gt; -BORDERSTROKETYPE: StrokeType_
+&lt;&lt;final&gt;&gt; -board: Board
+&lt;&lt;final&gt;&gt; -row: int
+&lt;&lt;final&gt;&gt; -col: int
+&lt;&lt;final&gt;&gt; -xcenter: double
+&lt;&lt;final&gt;&gt; -ycenter: double
+-borderWidth: double
+-borderColor: Color
+-fillColor: Color
+--
+&lt;&lt;constructor&gt;&gt; +Cell(Board, int, int,
+                                 double, double, double,
+                                 Color, Color, double[ ])
++setBorderWidth(double): void
++setBorderColor(Color): void
++setFillColor(Color): void
+&lt;&lt;final&gt;&gt; +getBoard(): Board
+&lt;&lt;final&gt;&gt; +getRow(): int
+&lt;&lt;final&gt;&gt; +getCol(): int
+&lt;&lt;final&gt;&gt; +getXcenter(): double
+&lt;&lt;final&gt;&gt; +getYcenter(): double
+&lt;&lt;final&gt;&gt; +getBorderWidth(): double
+&lt;&lt;final&gt;&gt; +getBorderColor(): Color
+&lt;&lt;final&gt;&gt; +getFillColor(): Color
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>192</x>
+      <y>144</y>
+      <w>24</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>704</x>
+      <y>184</y>
+      <w>272</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;abstract&gt;&gt;
+Figure
+--
+&lt;&lt;final&gt;&gt; -board: Board
+--
+&lt;&lt;constructor&gt;&gt; +Figure(Board)
+&lt;&lt;final&gt;&gt; +getBoard(): Board</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>832</x>
+      <y>144</y>
+      <w>24</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>704</x>
+      <y>320</y>
+      <w>272</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>
+Pawn
+--
+_&lt;&lt;static&gt;&gt;&lt;&lt;final&gt;&gt; -DEFAULT_BASERADIUS: double_
+_&lt;&lt;static&gt;&gt;&lt;&lt;final&gt;&gt; -DEFAULT_BASEHEIGHT: double_
+_&lt;&lt;static&gt;&gt;&lt;&lt;final&gt;&gt; -DEFAULT_MIDDLERADIUS: double_
+_&lt;&lt;static&gt;&gt;&lt;&lt;final&gt;&gt; -DEFAULT_TOPRADIUS: double_
+_&lt;&lt;static&gt;&gt;&lt;&lt;final&gt;&gt; -DEFAULT_BASEDIVISIONS: int_
+_&lt;&lt;static&gt;&gt;&lt;&lt;final&gt;&gt; -DEFAULT_MIDDLEDIVISIONS: int_
+_&lt;&lt;static&gt;&gt;&lt;&lt;final&gt;&gt; -DEFAULT_TOPDIVISIONS: int_
+&lt;&lt;final&gt;&gt; -base: Cylinder
+&lt;&lt;final&gt;&gt; -middle: Sphere
+&lt;&lt;final&gt;&gt; -top: Sphere
+--
+&lt;&lt;constructor&gt;&gt; +Pawn(Board)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>800</x>
+      <y>280</y>
+      <w>24</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>600</x>
+      <y>192</y>
+      <w>120</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=[figures]-&gt;&gt;&gt;&gt;
+m1=  1
+m2=0..*</panel_attributes>
+    <additional_attributes>30.0;10.0;130.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>616</x>
+      <y>264</y>
+      <w>112</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=[board]-&gt;
+m1=0..*
+m2=1</panel_attributes>
+    <additional_attributes>110.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>328</x>
+      <y>192</y>
+      <w>112</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=[cells]-&gt;&gt;&gt;&gt;
+m1=1
+m2=0..*</panel_attributes>
+    <additional_attributes>110.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>320</x>
+      <y>264</y>
+      <w>112</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=[board]-&gt;
+m1=0..*
+m2=1</panel_attributes>
+    <additional_attributes>20.0;10.0;120.0;10.0</additional_attributes>
+  </element>
+</diagram>
