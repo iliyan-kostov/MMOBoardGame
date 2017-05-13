@@ -1,16 +1,16 @@
-package board.figures;
+package board;
 
 import javafx.scene.shape.Cylinder;
 import javafx.scene.shape.Sphere;
 
 /**
  * <p>
- * Клас за фигура, подобна на пешките от шаха, реализирана чрез прости JavaFX
+ * Клас за фигура (подобна на пешките от шаха), реализирана чрез прости JavaFX
  * триизмерни примитиви.
  *
  * @author iliyan-kostov <https://github.com/iliyan-kostov/>
  */
-public final class Pawn extends board.figures.Figure {
+public final class Pawn extends board.Figure {
 
     // настройки по подразбиране за размерите
     private final static double DEFAULT_BASERADIUS = 9;
@@ -28,10 +28,12 @@ public final class Pawn extends board.figures.Figure {
     private final Sphere top;
 
     /**
-     * Конструктор без параметри.
+     * Създава фигура (подобна на пешките от шаха), част от определена дъска..
+     *
+     * @param board дъска, от която фигурата е част
      */
-    public Pawn() {
-        super();
+    public Pawn(Board board) {
+        super(board);
         this.base = new Cylinder(Pawn.DEFAULT_BASERADIUS, Pawn.DEFAULT_BASEHEIGHT, Pawn.DEFAULT_BASEDIVISIONS);
         this.middle = new Sphere(Pawn.DEFAULT_MIDDLERADIUS, Pawn.DEFAULT_MIDDLEDIVISIONS);
         this.top = new Sphere(Pawn.DEFAULT_TOPRADIUS, Pawn.DEFAULT_TOPDIVISIONS);
