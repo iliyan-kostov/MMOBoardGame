@@ -185,41 +185,99 @@ public abstract class Board implements PropertyChangeListener, VetoableChangeLis
     /**
      * <p>
      * Добавя фигура върху поле от дъската според зададени координати на полето.
+     * <p>
+     * Изпълнява се като следствие на съобщение от страна на обекта-логика.
      *
      * @param figure фигура
      *
      * @param toBoardCoords координати на полето
      */
-    public abstract void addFigure(Figure figure, BoardCoords toBoardCoords);
+    public abstract void respondFigureAdd(Figure figure, BoardCoords toBoardCoords);
 
     /**
      * <p>
      * Премахва фигура от поле от дъската според зададени координати на полето.
+     * <p>
+     * Изпълнява се като следствие на съобщение от страна на обекта-логика.
      *
      * @param fromBoardCoords координати на полето
      */
-    public abstract void removeFigure(BoardCoords fromBoardCoords);
+    public abstract void respondFigureDelete(BoardCoords fromBoardCoords);
 
     /**
      * <p>
      * Премества фигура по дъската според зададени координати на началното поле
      * и координати на крайното поле.
+     * <p>
+     * Изпълнява се като следствие на съобщение от страна на обекта-логика.
      *
      * @param fromBoardCoords координати на началното
      *
      * @param toBoardCoords координати на крайното поле
      */
-    public abstract void moveFigure(BoardCoords fromBoardCoords, BoardCoords toBoardCoords);
+    public abstract void respondFigureMove(BoardCoords fromBoardCoords, BoardCoords toBoardCoords);
 
     /**
      * <p>
      * Последователно премества няколко фигури (или една и съща) по дъската
      * според зададени масив от координати на началните полета и масив от
      * координати на крайните полета.
+     * <p>
+     * Изпълнява се като следствие на съобщение от страна на обекта-логика.
      *
      * @param fromBoardCoords масив от координати на началните полета
      *
      * @param toBoardCoords масив от координати на крайните полета
      */
-    public abstract void moveFigure(BoardCoords[] fromBoardCoords, BoardCoords[] toBoardCoords);
+    public abstract void respondFigureMove(BoardCoords[] fromBoardCoords, BoardCoords[] toBoardCoords);
+
+    /**
+     * Заявява намерение за добавяне на фигура върху поле от дъската според
+     * зададени координати на полето.
+     * <p>
+     * Заявката се изпраща към обекта-логика за обработка и отговор.
+     *
+     * @param figure фигура
+     *
+     * @param toBoardCoords координати на полето
+     */
+    public abstract void requestFigureAdd(Figure figure, BoardCoords toBoardCoords);
+
+    /**
+     * <p>
+     * Заявява намерение за премахване не фигура от поле от дъската според
+     * зададени координати на полето.
+     * <p>
+     * Заявката се изпраща към обекта-логика за обработка и отговор.
+     *
+     * @param fromBoardCoords координати на полето
+     */
+    public abstract void requestFigureDelete(BoardCoords fromBoardCoords);
+
+    /**
+     * <p>
+     * Заявява намерение за преместване на фигура по дъската според зададени
+     * координати на началното поле и координати на крайното поле.
+     * <p>
+     * Заявката се изпраща към обекта-логика за обработка и отговор.
+     *
+     * @param fromBoardCoords координати на началното
+     *
+     * @param toBoardCoords координати на крайното поле
+     */
+    public abstract void requestFigureMove(BoardCoords fromBoardCoords, BoardCoords toBoardCoords);
+
+    /**
+     * <p>
+     * Заявява намерение за последователно преместване на няколко фигури (или
+     * една и съща) по дъската според зададени масив от координати на началните
+     * полета и масив от координати на крайните полета.
+     * <p>
+     * Заявката се изпраща към обекта-логика за обработка и отговор.
+     *
+     * @param fromBoardCoords масив от координати на началните полета
+     *
+     * @param toBoardCoords масив от координати на крайните полета
+     */
+    public abstract void requestFigureMove(BoardCoords[] fromBoardCoords, BoardCoords[] toBoardCoords);
 }
